@@ -1,89 +1,169 @@
-
-import { Box, Card, CardContent, CardMedia, Typography, Chip, Grid, Divider } from "@mui/material";
-
+import { useState } from "react";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Chip,
+  Grid,
+  Modal,
+  Fade,
+  Backdrop,
+} from "@mui/material";
 
 const cardData = [
   {
-    title: "Money Track",
-    description: "Aplicação web moderna com foco em performance e responsividade.",
-    chips: ["React", "Node.js", "MongoDB"],
-    image: "https://wallpapers.com/images/hd/4k-programming-background-kphsfn7i11jhkmyr.jpg",
-    chipss: ["GitHub", "Demonstração"],
+    title: "Product Price",
+    description: "Sistema de precificação dinâmica para supermercado.",
+    fullDescription:
+      `O Product Price é uma aplicação completa de precificação dinâmica na hora de fazer compras no supermercado.
+      
+      O sistema permite que o usuário adicione produtos ao carrinho, ao mesmo tempo na vida real e calcule automaticamente o preço total com base
+      na quantidade e no preço de cada item.
+      O projeto foi desenvolvido com foco na forma de facilitar em gereciar o valor que o usuário irá pagar ao final das compras, otimizando tempo
+      e evitando erros de cálculo.`,
+    chips: ["React", "Node.js", "SQLite", "MUI"],
+    image: "/Sprite-0002.png",
+    actions: [
+      { label: "GitHub", type: "url", url: "https://github.com/kelvis1/product-price/tree/master" },
+      { label: "Resumo", type: "resumo" },
+      { label: "Demonstração", type: "url", url: "https://product-price-front.vercel.app/"},
+    ],
   },
   {
     title: "Projeto Ambula",
-    description: "App mobile desenvolvido com React Native e integração API.",
+    description: "Ambula foi um aplicativo base de chamada de veiculos de emergência.",
+    fullDescription: "Ambula foi um aplicativo base de chamada de veiculos de emergência, desenvolvido durante um teste técnico para uma vaga de estagio",
     chips: ["React Native", "API REST", "Firebase"],
-    image: "https://speckyboy.com/wp-content/uploads/2022/11/css-learn-thumb.jpg",
-    chipss: ["GitHub", "Demonstração"],
+    image: "/mapa.png",
+    actions: [
+      { label: "GitHub", type: "url", url: "https://github.com/kelvis1/projeto-ambula" },
+      { label: "Resumo", type: "resumo" },
+    ],
   },
   {
     title: "Portfólio",
-    description: "Dashboard com visualização de dados em tempo real.",
+    description: "Meu portfólio pessoal desenvolvido para apresentar meus projetos.",
+    fullDescription: "Meu portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como desenvolvedor web.",
     chips: ["Next.js", "Chart.js", "TailwindCSS"],
-    image: "https://tse1.mm.bing.net/th/id/OIP.FIKjDLcauk-LBxCtuXc6lQHaEK?w=1366&h=768&rs=1&pid=ImgDetMain&o=7&rm=3",
-    chipss: ["GitHub", "Demonstração"],
+    image: "/portifolio.png",
+    actions: [
+      { label: "GitHub", type: "url", url: "https://github.com/seu-repo-3" },
+      { label: "Resumo", type: "resumo" },
+    ],
   },
 ];
 
 export default function CardSection() {
+  const [open, setOpen] = useState(false);
+  const [modalInfo, setModalInfo] = useState({ title: "", description: "" });
+
+  const handleOpenResumo = (card) => {
+    setModalInfo({ title: card.title, description: card.fullDescription || card.description, });
+    setOpen(true);
+  };
+
+  const handleClose = () => setOpen(false);
+
   return (
-    <Box
-      sx={{
-        mt: 10,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        gap: 5,
-      }}
-    >
+    <>
+      <Box
+        sx={{
+          mt: 10,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 5,
+        }}
+      >
+        <Grid container spacing={4} justifyContent="center" maxWidth="1000px">
+          {cardData.map((card, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card
+                sx={{
+                  maxWidth: 300,
+                  mx: "auto",
+                  transition: "0.3s",
+                  "&:hover": { transform: "scale(1.05)", boxShadow: 5 },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={card.image}
+                  alt={card.title}
+                />
 
-      <Box sx={{ mt: 0, display: "flex", flexDirection: "column", alignItems: "center", }}></Box>
+                <CardContent>
+                  <Typography variant="h6" fontWeight="bold" gutterBottom>
+                    {card.title}
+                  </Typography>
 
-      <Grid container spacing={4} justifyContent="center" maxWidth="1000px">
-        {cardData.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card
-              sx={{
-                maxWidth: 300,
-                mx: "auto",
-                transition: "0.3s",
-                "&:hover": { transform: "scale(1.05)", boxShadow: 5 }
-              }}
-            >
-              <CardMedia
-                component="img"
-                height="200"
-                image={card.image}
-                alt={card.title}
-              />
-              <CardContent>
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
-                  {card.title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary" gutterBottom>
-                  {card.description}
-                </Typography>
+                  <Typography variant="body2" color="text.secondary" gutterBottom>
+                    {card.description}
+                  </Typography>
 
-                <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mt: 1 }}>
-                  {card.chips.map((chip, chipIndex) => (
-                    <Chip key={chipIndex} label={chip} variant="outlined" />
-                  ))}
-                </Box>
+               
+                  <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mt: 1 }}>
+                    {card.chips.map((chip, chipIndex) => (
+                      <Chip key={chipIndex} label={chip} variant="outlined" />
+                    ))}
+                  </Box>
 
-                <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mt: 1 }}>
-                  {card.chipss && card.chipss.map((chip, chipIndex) => (
-                    <Chip key={chipIndex} label={chip}  />
-                  ))}
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+                
+                  <Box sx={{ display: "flex", gap: 1, flexWrap: "wrap", mt: 2 }}>
+                    {card.actions.map((action, i) => (
+                      <Chip
+                        key={i}
+                        label={action.label}
+                        clickable
+                        sx={{ bgcolor: action.type === "url" ? "#000" : "#9e9e9e", color: "#fff",
+                           fontWeight: "bold", "&:hover": { bgcolor: action.type === "url" ? "#333" : "#bdbdbd",}, }}
+                        onClick={() =>
+                          action.type === "url"
+                            ? window.open(action.url, "_blank")
+                            : handleOpenResumo(card)
+                        }
+                      />
+                    ))}
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
 
-    
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 400 }}
+      >
+        <Fade in={open}>
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: 400,
+              bgcolor: "background.paper",
+              borderRadius: 2,
+              boxShadow: 24,
+              p: 4,
+            }}
+          >
+            <Typography variant="h6" fontWeight="bold">
+              {modalInfo.title}
+            </Typography>
 
+            <Typography sx={{ mt: 2 }}>{modalInfo.description}</Typography>
+          </Box>
+        </Fade>
+      </Modal>
+    </>
   );
 }

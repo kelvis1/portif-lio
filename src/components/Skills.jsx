@@ -8,17 +8,17 @@ const skillsData = [
   {
     title: "Frontend",
     icon: <CodeIcon sx={{ fontSize: 30 }} />,
-    chips: ["React", "Next.js", "JavaScript", "HTML", "CSS", "Material UI", "TailwindCSS"],
+    chips: ["React", "Next.js", "HTML", "CSS", "Material UI",],
   },
   {
     title: "Backend",
     icon: <ApiIcon sx={{ fontSize: 30 }} />,
-    chips: ["Node.js", "Express", "REST API", "JWT", "WebSockets"],
+    chips: ["Node.js", "SQLite", "JavaScript" ],
   },
   {
     title: "Database",
     icon: <StorageIcon sx={{ fontSize: 30 }} />,
-    chips: ["MongoDB", "MySQL", "PostgreSQL", "Prisma", "Mongoose"],
+    chips: ["MongoDB", "MySQL", "PostgreSQL"],
   },
 ];
 

@@ -5,9 +5,14 @@ import { Box, Chip, Typography } from '@mui/material';
 
 export default function Footer() {
 
-    const handleClick = () => {
-        console.log('Clicado!');
-    }
+    const links = {
+        github: "https://github.com/kelvis1",
+        linkedin: "https://www.linkedin.com/in/kelves-rodrigues-28b90b28b/",
+    };
+
+    const handleRedirect = (url) => {
+        window.open(url, "_blank");
+    };
 
   return (
 <>
@@ -24,9 +29,22 @@ export default function Footer() {
 </Box>
 
 <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center', gap: 2, p: 5, }}>
-    <Chip label="E-mail" variant="outlined" onClick={handleClick} sx={{ width: "100px" }} />
-    <Chip label="GitHub" variant="outlined" onClick={handleClick} sx={{ width: "100px" }} />
-    <Chip label="LinkedIn" variant="outlined" onClick={handleClick} sx={{ width: "100px" }} />
+    
+    <Chip 
+        label="GitHub"
+        variant="outlined"
+        sx={{ width: "100px" }}
+        clickable
+        onClick={() => handleRedirect(links.github)}
+    />
+    <Chip 
+        label="LinkedIn"
+        variant="outlined"
+        sx={{ width: "100px" }}
+        clickable
+        onClick={() => handleRedirect(links.linkedin)}
+    />
+    
 </Box>
 
 </>
