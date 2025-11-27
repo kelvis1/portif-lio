@@ -3,22 +3,27 @@ import { Box, Card, CardContent, Typography, Chip, Grid } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code"; 
 import StorageIcon from "@mui/icons-material/Storage"; 
 import ApiIcon from "@mui/icons-material/Api"; 
+import BuildIcon from '@mui/icons-material/Build';
 
 const skillsData = [
   {
     title: "Frontend",
     icon: <CodeIcon sx={{ fontSize: 30 }} />,
-    chips: ["React", "Next.js", "HTML", "CSS", "Material UI",],
+    chips: ["React", "Next.js", "HTML", "CSS", "Vue.js"],
   },
   {
     title: "Backend",
     icon: <ApiIcon sx={{ fontSize: 30 }} />,
-    chips: ["Node.js", "SQLite", "JavaScript" ],
+    chips: ["Node.js", "PHP", "JavaScript" ],
   },
   {
     title: "Database",
     icon: <StorageIcon sx={{ fontSize: 30 }} />,
-    chips: ["MongoDB", "MySQL", "PostgreSQL"],
+    chips: ["MongoDB", "MySQL", "SQLite"],
+  },
+  { title: "Ferramentas",
+    icon: <BuildIcon sx={{ fontSize: 30 }} />,
+    chips: ["Git", "Docker", "Figma", "Vercel"]
   },
 ];
 
