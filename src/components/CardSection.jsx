@@ -23,7 +23,7 @@ const cardData = [
       na quantidade e no preço de cada item.
       O projeto foi desenvolvido com foco na forma de facilitar em gereciar o valor que o usuário irá pagar ao final das compras, otimizando tempo
       e evitando erros de cálculo.`,
-    chips: ["React", "Node.js", "SQLite", "MUI"],
+    chips: ["React", "Node.js", "SQLite", "MUI", "Vercel", "HTML", "CSS"],
     image: "/Sprite-0002.png",
     actions: [
       { label: "GitHub", type: "url", url: "https://github.com/kelvis1/product-price/tree/master" },
@@ -35,7 +35,7 @@ const cardData = [
     title: "Projeto Ambula",
     description: "Ambula foi um aplicativo base de chamada de veiculos de emergência.",
     fullDescription: "Ambula foi um aplicativo base de chamada de veiculos de emergência, desenvolvido durante um teste técnico para uma vaga de estagio",
-    chips: ["React Native", "API REST", "Firebase"],
+    chips: ["React Native", "API REST", "Firebase", "HTML", "CSS"],
     image: "/mapa.png",
     actions: [
       { label: "GitHub", type: "url", url: "https://github.com/kelvis1/projeto-ambula" },
@@ -46,11 +46,24 @@ const cardData = [
     title: "Portfólio",
     description: "Meu portfólio pessoal desenvolvido para apresentar meus projetos.",
     fullDescription: "Meu portfólio pessoal desenvolvido para apresentar meus projetos e habilidades como desenvolvedor web.",
-    chips: ["Next.js", "Chart.js", "TailwindCSS"],
+    chips: ["React", "JavaScript", "MUI", "HTML", "CSS", "Vercel"],
     image: "/portifolio.png",
     actions: [
       { label: "GitHub", type: "url", url: "https://github.com/seu-repo-3" },
       { label: "Resumo", type: "resumo" },
+    ],
+  },
+  {
+    title: "MoneyPlus",
+    description: "Projeto em desenvolvimento",
+    fullDescription: "Meu projeto de finanças definitivo, nele pretendo colocar uma boa organização na distribuição do dinheiro do usuario!",
+    chips: ["React", "JavaScript", "HTML", "CSS", "Node.js", "Express"],
+    image: "/moneyplus.png",
+    actions: [
+      {label: "Github-front", type: "url", url: "https://github.com/kelvis1/MoneyPlus-front"},
+      {label: "Github-back", type: "url", url: "https://github.com/kelvis1/MoneyPlus-back"},
+      {label: "Resumo", type: "resumo" },
+      { label: "Demonstração", type: "url", url: "https://money-plus-front.vercel.app/"},
     ],
   },
 ];
