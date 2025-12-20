@@ -66,6 +66,17 @@ const cardData = [
       { label: "Demonstração", type: "url", url: "https://money-plus-front.vercel.app/"},
     ],
   },
+  {
+    title: "MoneyPlus-App",
+    description: "Projeto em desenvolvimento",
+    fullDescription: "Meu projeto de finanças definitivo, nele pretendo colocar uma boa organização na distribuição do dinheiro do usuario!",
+    chips: ["React", "JavaScript", "HTML", "CSS"],
+    image: "/moneyplus-app.png",
+    actions: [
+      {label: "Github", type: "url", url: "https://github.com/kelvis1/moneyplus-app"},
+      {label: "Resumo", type: "resumo"},
+    ],
+  },
 ];
 
 export default function CardSection() {
