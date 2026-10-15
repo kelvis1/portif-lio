@@ -53,12 +53,12 @@ function DrawerAppBar(props) {
         component="nav"
         elevation={0}
         sx={{
-          backgroundColor: 'rgba(255,255,255,0.8)',
+          backgroundColor: '#000000',
           opacity: 1,
           color: 'black',
           backdropFilter: 'blur(10px)', 
           WebkitBackdropFilter: 'blur(10px)',
-          borderBottom: '1px solid rgba(0,0,0,0.1)', 
+          borderBottom: '1px solid #fca311', 
         }}
       >
         <Toolbar>
@@ -66,7 +66,7 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' }, color: "black" }}
+            sx={{ mr: 2, display: { sm: 'none' }, color: "white" }}
           >
             <MenuIcon />
           </IconButton>
@@ -75,15 +75,15 @@ function DrawerAppBar(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' }, fontWeight: 'bold', color: 'white' }}
           >
             Portfólio
           </Typography>
 
           {/* Menu Desktop */}
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: 2 }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: 'black' }} onClick={() => document.getElementById(item.toLowerCase())
+              <Button key={item} sx={{ color: 'white', fontWeight: 500, }} onClick={() => document.getElementById(item.toLowerCase())
                 .scrollIntoView({ behavior: 'smooth' })
               }>
                 {item}

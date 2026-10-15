@@ -31,43 +31,57 @@ export default function Body() {
         >
 
             <>
-                <Box sx={{ mt: 8, display: 'flex', justifyContent: 'center', }}>
-                    <Chip label="Desenvolvedor Full Stack"
-                        sx={{ fontSize: '1rem', padding: '10px 6px' }} />
+              <Box 
+                sx={{
+                    padding: 2,
+                    mt: 8,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    paddingInline: 10,
+                    gap: 4
+                }}
+                >
+                    <Box sx={{ maxWidth: '700px' }}>
+                        <Chip
+                            label="Desenvolvedor Full Stack"
+                            sx={{ fontSize: "1rem", padding: "10px 6px", mb: 2 }}
+                        />
+                        <Typography
+                            variant="h5"
+                            sx={{ fontWeight: "bold", mb: 2 }}
+                        >
+                            Sobre Mim
+                        </Typography>
+
+                        <Typography
+                            sx={{ color: "text.secondary" }}
+                        >
+                            Desenvolvedor de software apaixonado, especializado na criação de
+                            aplicações escaláveis e centradas no usuário com tecnologias de ponta.
+                            Do conceito à implementação, transformo ideias em realidade com código
+                            limpo e design intuitivo.
+                        </Typography>
+                    </Box>
+
+                    <Box
+                        sx={{
+                            
+                            width: 320,
+                            height: 320,
+                            borderRadius: "10%",
+                            overflow: "hidden",
+                            
+                        }}
+                    >
+                        <img 
+                            src="/minhafoto.jpeg"
+                            alt="Minha Foto"
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', }}
+                        />
+                    </Box>
                 </Box>
 
-                <Box sx={{ mt: 0, textAlign: 'center', p: 2, }}>
-                    <Typography variant="h7" sx={{ fontWeight: 'bold', mb: 1, }}>
-                        Construindo Aplicações Web Modernas
-                    </Typography>
-                </Box>
-                <Box id="sobre" sx={{ mt: 0, textAlign: 'center', p: 2, marginInline: '170px', }}>
-                    <Typography variant="h7" sx={{ maxWidth: '800px', margin: '0 auto', color: 'text.secondary', }}>
-                        Desenvolvedor de software apaixonado, especializado na criação de aplicações escaláveis e centradas no usuário com tecnologias de ponta. Do conceito à implementação, transformo ideias em realidade com código limpo e design intuitivo.
-                    </Typography>
-                </Box>
-
-                <Box sx={{ mt: 3, display: 'flex', justifyContent: 'center', gap: 2, }}>
-                    <Chip label="Meus Projetos" onClick={scrollToProjects} />
-                    <Chip label="Entre em contato" variant="outlined" onClick={scrollToContact} />
-
-                </Box>
-
-                <Box sx={{ mt: 20, textAlign: 'left', marginInline: 15, p: 2, }}>
-                    <Typography variant="h7" sx={{ fontWeight: 'bold', mb: 1, }}>
-                        Sobre Mim
-                    </Typography>
-                </Box>
-
-                <Box sx={{ mt: 0, textAlign: 'left', marginInline: 15, p: 2, }}>
-                    <Typography variant="h7" sx={{ maxWidth: '800px', color: 'text.secondary', }}>
-                        Desenvolvedor front-end com experiência prática em projetos web e mobile, focado em interfaces
-                        funcionais e intuitivas. Atuei como estagiário em desenvolvimento de aplicações utilizando
-                        tecnologias como React, JavaScript e PHP. Tenho conhecimento em boas práticas de UI/UX e estou
-                        em constante evolução, ampliando habilidades no back-end com foco em PHP e Docker. Possuo perfil
-                        proativo, colaborativo e voltado para resultados.
-                    </Typography>
-                </Box>
 
                 <Divider id="experiencia" sx={{ my: 6 }} />
                     <Experiencia />
